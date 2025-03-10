@@ -1,10 +1,16 @@
 
-
-let jourSemaines = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
-function afficherJoursSemaine() {
-    for (let day of jourSemaines) {
-        console.log(day);
+function fizzBuzz() {
+    for (let chiffre = 1; chiffre <= 151; chiffre++) { 
+        if (chiffre % 3 === 0 && chiffre % 5 === 0) {
+            console.log("FizzBuzz");
+        } else if (chiffre % 3 === 0) {
+            console.log("Fizz");
+        } else if (chiffre % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            console.log(chiffre);
+        }
     }
-}  
+}
 
-console.log(afficherJoursSemaine());
+fizzBuzz();
