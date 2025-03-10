@@ -1,5 +1,5 @@
 function message() {
-    return alert("Hello Javascript ! ");
+    return console.log("Hello Javascript ! ");
 }
 
 message();
