@@ -1,0 +1,42 @@
+<!-- Dans cet exercice, six images s’assemblent pour former un arc-en-ciel, il vous faudra les mélanger puis les remettre en ordre.
+
+Le but de ce job sera dans un premier temps de créer une balise <button>. Cette balise servira à mélanger l’ensemble des images de l’arc-en-ciel.
+
+Par la suite, vous devrez faire en sorte qu’il soit possible de remettre les images dans le bon ordre, en utilisant un ou plusieurs conteneurs.
+
+Une fois que les 6 images sont ordonnées, un message s’affiche en dessous : Si l'arc-en-ciel est bien reconstitué, le message “Vous avez gagné” s’affiche
+en vert. Sinon, le message “Vous avez perdu” s’affiche en rouge.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+
+</head>
+<body>
+
+    
+  <button id="shuffleBtn">Mélanger les images</button>
+  <button id="checkBtn">Vérifier l'ordre</button>
+
+  <div id="container">
+    <!-- Les images avec un data-id pour vérifier l'ordre plus tard -->
+    <img src="arc1.png" class="rainbow-piece" data-id="1" draggable="true">
+    <img src="arc2.png" class="rainbow-piece" data-id="2" draggable="true">
+    <img src="arc3.png" class="rainbow-piece" data-id="3" draggable="true">
+    <img src="arc4.png" class="rainbow-piece" data-id="4" draggable="true">
+    <img src="arc5.png" class="rainbow-piece" data-id="5" draggable="true">
+    <img src="arc6.png" class="rainbow-piece" data-id="6" draggable="true">
+  </div>
+
+
+  <div id="result"></div>
+    
+</body>
+</html>
