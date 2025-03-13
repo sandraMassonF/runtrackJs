@@ -1,9 +1,6 @@
-<!-- Créez une balise <button> et sélectionnez-la dans votre code JavaScript.
-En cliquant sur le bouton, vous devrez faire apparaître le texte sur votre page HTML :
-
-“Les logiciels et les cathédrales, c'est un peu la même chose - d'abord, on les construit, ensuite, on prie.”
-
-Ensuite, créez un bouton qui servira à cacher tout l’élément HTML. -->
+<!-- Créez un <button> ayant comme id “button”. Créez un fichier expression.txt contenant votre expression favorite.
+Lorsqu’un utilisateur clique sur le bouton, à l’aide de Fetch, récupérez le contenu du fichier expression.txt, placez-le dans un paragraphe <p> et
+insérez-le dans le corps de votre page. -->
 
 
 <!DOCTYPE html>
@@ -11,15 +8,15 @@ Ensuite, créez un bouton qui servira à cacher tout l’élément HTML. -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" async></script>
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="./script.js"></script>
-
+    
 </head>
 <body>
-
-    <button id="afficherBtn">Afficher la citation</button>
+    
+    <button id="button">Afficher l'expression</button>
+    
+    <div id="result"></div>
     
 </body>
 </html>

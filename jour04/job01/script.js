@@ -1,31 +1,23 @@
-$(document).ready(function() {
-    // Quand on clique sur le bouton "Afficher"
-    $('#afficherBtn').on('click', function() {
-      // Vérifier si la citation existe déjà pour éviter de la recréer
-      $(this).hide();
+const button = document.getElementById('button');
 
-      if ($('#citation').length === 0) {
-        // Création de la citation
-        const $citation = $('<div>', {
-          id: 'citation',
-          text: "Les logiciels et les cathédrales, c'est un peu la même chose - d'abord, on les construit, ensuite, on prie."
+// Ajout d'un écouteur d'événement pour le clic
+button.addEventListener('click', function() {
+    // Utilisation de Fetch pour récupérer le fichier texte
+    fetch('expression.txt')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erreur lors du chargement du fichier');
+            }
+            return response.text(); // Récupère le contenu en texte
+        })
+        .then(data => {
+            // Création d'un paragraphe et insertion du texte
+            const p = document.createElement('p');
+            p.textContent = data;
+            document.getElementById('result').innerHTML = ''; // Nettoyer l'ancien contenu
+            document.getElementById('result').appendChild(p);
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
         });
-
-        // Création du bouton "Cacher"
-        const $btnCacher = $('<button>', {
-          text: 'Cacher la citation',
-          id: 'cacherBtn'
-        });
-
-        // Action du bouton "Cacher" : supprimer la citation et lui-même
-          $btnCacher.on('click', function() {
-          $citation.remove();
-          $(this).remove();
-          $('#afficherBtn').show();
-        });
-
-        // Ajouter la citation et le bouton "Cacher" à la page
-        $('body').append($citation, $btnCacher);
-      }
-    });
-  });
+});
