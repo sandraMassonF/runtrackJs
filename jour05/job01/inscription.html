@@ -1,0 +1,67 @@
+<!-- Commencez par créer deux fichiers HTML “connexion.html” et “inscription.html” contenant un formulaire.
+
+Le formulaire de la page de connexion doit contenir les champs suivants :
+➔ Email
+➔ Mot de passe
+Le formulaire de la page inscription être composé au minimum des champs
+suivants :
+➔ Nom
+➔ Prénom
+➔ Email
+➔ Mot de passe
+➔ Adresse
+➔ Code postal
+
+Faite de la veille sur les différentes sécurités à mettre sur un formulaire coté front. Chaque champ doit être vérifié de façon asynchrone.
+Un message lié à chaque erreur doit être affiché en dessous de chaque champ du formulaire le cas échéant. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" async></script>
+    <title>Document</title>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="">Jour 05</a>
+            <a href="./connexion.html" class="btn">Connexion</a>
+            <a href="./inscription.html" class="btn">Inscription</a>
+        </nav>
+        </header>
+    <h1>Inscription</h1>
+    <form id="registerForm" novalidate>
+        <label>Nom :</label><br>
+        <input type="text" id="lastName" name="lastName" required><br>
+        <span class="error-message" id="lastNameError"></span><br>
+
+        <label>Prénom :</label><br>
+        <input type="text" id="firstName" name="firstName" required><br>
+        <span class="error-message" id="firstNameError"></span><br>
+
+        <label>Email :</label><br>
+        <input type="email" id="registerEmail" name="email" required><br>
+        <span class="error-message" id="registerEmailError"></span><br>
+
+        <label>Mot de passe :</label><br>
+        <input type="password" id="registerPassword" name="password" minlength="8" required><br>
+        <span class="error-message" id="registerPasswordError"></span><br>
+
+        <label>Adresse :</label><br>
+        <input type="text" id="address" name="address" required><br>
+        <span class="error-message" id="addressError"></span><br>
+
+        <label>Code postal :</label><br>
+        <input type="text" id="postalCode" name="postalCode" pattern="[0-9]{5}" required><br>
+        <span class="error-message" id="postalCodeError"></span><br>
+
+        <button type="submit">S'inscrire</button>
+    </form>
+
+    
+</body>
+</html>
